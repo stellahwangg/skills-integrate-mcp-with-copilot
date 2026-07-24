@@ -16,12 +16,35 @@ body {
 }
 
 header {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   margin-bottom: 30px;
   background-color: #1a237e;
   color: white;
   border-radius: 5px;
+}
+
+.auth-bar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-bar span {
+  font-size: 13px;
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 5px 8px;
+  border-radius: 4px;
+}
+
+.auth-bar button {
+  padding: 6px 10px;
+  font-size: 13px;
 }
 
 header h1 {
@@ -164,6 +187,14 @@ button:hover {
   background-color: #3949ab;
 }
 
+.secondary-button {
+  background-color: #546e7a;
+}
+
+.secondary-button:hover {
+  background-color: #455a64;
+}
+
 .message {
   margin-top: 20px;
   padding: 10px;
@@ -190,6 +221,51 @@ button:hover {
 
 .hidden {
   display: none;
+}
+
+.disabled-panel form {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 420px;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.modal-content h3 {
+  margin-bottom: 14px;
+  color: #1a237e;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+  .auth-bar {
+    position: static;
+    justify-content: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+  }
 }
 
 footer {
